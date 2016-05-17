@@ -1,0 +1,1060 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A89D72A7-683E-4219-B2E7-B79646518F05}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>MMSOnline.My.MyApplication</StartupObject>
+    <RootNamespace>MMSOnline</RootNamespace>
+    <AssemblyName>MMSOnline</AssemblyName>
+    <MyType>WindowsForms</MyType>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>ftp://mmsonline.mmservices.ca/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://mmsonline.mmservices.ca/MMSOnline/</InstallUrl>
+    <SupportUrl>http://mmsonline.mmservices.ca/docs/MMS%2520User%2520Docs.htm</SupportUrl>
+    <TargetCulture>en-CA</TargetCulture>
+    <ProductName>MMSOnline</ProductName>
+    <PublisherName>Marine Management Services</PublisherName>
+    <MinimumRequiredVersion>4.0.4.14</MinimumRequiredVersion>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>22</ApplicationRevision>
+    <ApplicationVersion>4.0.4.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>MMSOnline.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>MMSOnline.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>FA5916DE72B9BBA9D2AD68D1B2A59CBF98D3F389</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>MMSOnline_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.OWC11, Version=11.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Calendar.DayView, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Calendar.DayView.dll</HintPath>
+    </Reference>
+    <Reference Include="DiffieHellman, Version=0.0.0.0, Culture=neutral">
+      <HintPath>..\packages\DiffieHellman.1.0.0\lib\net40\DiffieHellman.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="edtFTPnet, Version=1.2.3.0, Culture=neutral, PublicKeyToken=4b0c991f43097782">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Dev odds and ends\edtftpnet-1.2.3\bin\edtFTPnet.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=3.1.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Dev odds and ends\itextsharp-3.1.8-dll\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Owc11, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="msdatasrc, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>Resources\msdatasrc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=1.0.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\MySQL\MySQL Connector Net 1.0.8\Binaries\.NET 1.1\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Org.Mentalis.Security, Version=1.0.13.715, Culture=neutral">
+      <HintPath>..\packages\Org.Mentalis.Security.1.0.0\lib\net40\Org.Mentalis.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Common Files\Microsoft Shared\MSEnv\PublicAssemblies\stdole.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Tamir.sharpSsh, Version=1.1.1.11, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\Tamir.sharpSsh.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEmail.Designer.vb">
+      <DependentUpon>frmEmail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEmail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmIssuesearch.Designer.vb">
+      <DependentUpon>FrmIssuesearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmIssuesearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmOrderPartsMain.Designer.vb">
+      <DependentUpon>frmOrderPartsMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmOrderPartsMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmServiceMain.Designer.vb">
+      <DependentUpon>frmServiceMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmServiceMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmUsers.Designer.vb">
+      <DependentUpon>frmUsers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmUsers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmWarrantyClaimsMain.Designer.vb">
+      <DependentUpon>frmWarrantyClaimsMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmWarrantyClaimsMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmAddNewPart.Designer.vb">
+      <DependentUpon>frmAddNewPart.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmAddNewPart.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\FrmAdjustWOBill.Designer.vb">
+      <DependentUpon>FrmAdjustWOBill.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\FrmAdjustWOBill.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\FrmDeliveryList.Designer.vb">
+      <DependentUpon>FrmDeliveryList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\FrmDeliveryList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\FrmDoneBin.Designer.vb">
+      <DependentUpon>FrmDoneBin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\FrmDoneBin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmOldCallLogByCustomer.Designer.vb">
+      <DependentUpon>frmOldCallLogByCustomer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmOldCallLogByCustomer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmPartsOrder.Designer.vb">
+      <DependentUpon>frmPartsOrder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmPartsOrder.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmReportTimePicker.Designer.vb">
+      <DependentUpon>frmReportTimePicker.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmReportTimePicker.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmServiceSchedule.Designer.vb">
+      <DependentUpon>frmServiceSchedule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmServiceSchedule.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\FrmTechscrn.Designer.vb">
+      <DependentUpon>FrmTechscrn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\FrmTechscrn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmAddCustomer.Designer.vb">
+      <DependentUpon>frmAddCustomer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmAddCustomer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmaddpart.Designer.vb">
+      <DependentUpon>frmaddpart.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmaddpart.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\FrmBoats2Order.Designer.vb">
+      <DependentUpon>FrmBoats2Order.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\FrmBoats2Order.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmCallLog.Designer.vb">
+      <DependentUpon>frmCallLog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmCallLog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmchangepass.Designer.vb">
+      <DependentUpon>frmchangepass.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmchangepass.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmCheckIn.Designer.vb">
+      <DependentUpon>frmCheckIn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmCheckIn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmcommadjust.Designer.vb">
+      <DependentUpon>frmcommadjust.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmcommadjust.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmcommadjustaddedit.Designer.vb">
+      <DependentUpon>frmcommadjustaddedit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmcommadjustaddedit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\FrmCustFinder.Designer.vb">
+      <DependentUpon>FrmCustFinder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\FrmCustFinder.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmEditCustomer.Designer.vb">
+      <DependentUpon>frmEditCustomer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmEditCustomer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmFTPGet.Designer.vb">
+      <DependentUpon>frmFTPGet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmFTPGet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\FrmGenComm.Designer.vb">
+      <DependentUpon>FrmGenComm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\FrmGenComm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmInsurance.Designer.vb">
+      <DependentUpon>frmInsurance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmInsurance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\FrmIssue.Designer.vb">
+      <DependentUpon>FrmIssue.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\FrmIssue.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmlogpayment.Designer.vb">
+      <DependentUpon>frmlogpayment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmlogpayment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmLogWork.Designer.vb">
+      <DependentUpon>frmLogWork.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmLogWork.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmNewIssue.Designer.vb">
+      <DependentUpon>frmNewIssue.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmNewIssue.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\FRMnote.Designer.vb">
+      <DependentUpon>FRMnote.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\FRMnote.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmOrderBoat.Designer.vb">
+      <DependentUpon>frmOrderBoat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmOrderBoat.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmaddboatsn.Designer.vb">
+      <DependentUpon>frmaddboatsn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmaddboatsn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\FrmPCL.Designer.vb">
+      <DependentUpon>FrmPCL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\FrmPCL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\FrmPriority.Designer.vb">
+      <DependentUpon>FrmPriority.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\FrmPriority.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmQuickPaymentCalc.Designer.vb">
+      <DependentUpon>frmQuickPaymentCalc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmQuickPaymentCalc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmReport.Designer.vb">
+      <DependentUpon>frmReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmReportSelection.Designer.vb">
+      <DependentUpon>frmReportSelection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmReportSelection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmreportwait.Designer.vb">
+      <DependentUpon>frmreportwait.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmreportwait.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmStats.Designer.vb">
+      <DependentUpon>frmStats.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmStats.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmViewPic.Designer.vb">
+      <DependentUpon>frmViewPic.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmViewPic.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmWarrantyEntry.Designer.vb">
+      <DependentUpon>frmWarrantyEntry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmWarrantyEntry.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\FrmWO.Designer.vb">
+      <DependentUpon>FrmWO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\FrmWO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmYTD.Designer.vb">
+      <DependentUpon>frmYTD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmYTD.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\PickStore.Designer.vb">
+      <DependentUpon>PickStore.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\PickStore.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\RepScreen.Designer.vb">
+      <DependentUpon>RepScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\RepScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Librarys\PartsOrderData.vb" />
+    <Compile Include="Librarys\Printclass.vb" />
+    <Compile Include="Librarys\PartsData.vb" />
+    <Compile Include="Librarys\IssueData.vb" />
+    <Compile Include="Librarys\LogData.vb" />
+    <Compile Include="Librarys\WOData.vb" />
+    <Compile Include="Librarys\CustData.vb" />
+    <Compile Include="Librarys\Functions.vb" />
+    <Compile Include="Librarys\equipment.vb" />
+    <Compile Include="Librarys\BOSdata.vb" />
+    <Compile Include="Forms\pop-ups\frmadmnbos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmAddBoats.Designer.vb">
+      <DependentUpon>frmAddBoats.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmAddBoats.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmBOS.Designer.vb">
+      <DependentUpon>frmBOS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmBOS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmeditinv.Designer.vb">
+      <DependentUpon>frmeditinv.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmeditinv.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmequip.Designer.vb">
+      <DependentUpon>frmequip.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmequip.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmmain.Designer.vb">
+      <DependentUpon>frmmain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmmain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmInv.Designer.vb">
+      <DependentUpon>frmInv.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmInv.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmnewboat.Designer.vb">
+      <DependentUpon>frmnewboat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmnewboat.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmnewmotor.Designer.vb">
+      <DependentUpon>frmnewmotor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmnewmotor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmSalesman.Designer.vb">
+      <DependentUpon>frmSalesman.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmSalesman.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmxlsheet.Designer.vb">
+      <DependentUpon>frmxlsheet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmxlsheet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmload.Designer.vb">
+      <DependentUpon>frmload.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\pop-ups\frmload.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Librarys\paymentcalc.vb" />
+    <Compile Include="Librarys\PreFetch.vb" />
+    <Compile Include="Librarys\Inventorydata.vb" />
+    <Compile Include="Forms\GlobalConstants.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\Form1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEmail.resx">
+      <DependentUpon>frmEmail.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmIssuesearch.resx">
+      <DependentUpon>FrmIssuesearch.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmOrderPartsMain.resx">
+      <DependentUpon>frmOrderPartsMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmServiceMain.resx">
+      <DependentUpon>frmServiceMain.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmUsers.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmUsers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmWarrantyClaimsMain.resx">
+      <DependentUpon>frmWarrantyClaimsMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmAddNewPart.resx">
+      <DependentUpon>frmAddNewPart.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\FrmAdjustWOBill.resx">
+      <DependentUpon>FrmAdjustWOBill.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\FrmDeliveryList.resx">
+      <DependentUpon>FrmDeliveryList.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\FrmDoneBin.resx">
+      <DependentUpon>FrmDoneBin.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmOldCallLogByCustomer.resx">
+      <DependentUpon>frmOldCallLogByCustomer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmPartsOrder.resx">
+      <DependentUpon>frmPartsOrder.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmReportTimePicker.resx">
+      <DependentUpon>frmReportTimePicker.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmServiceSchedule.resx">
+      <DependentUpon>frmServiceSchedule.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\FrmTechscrn.resx">
+      <DependentUpon>FrmTechscrn.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmAddCustomer.resx">
+      <DependentUpon>frmAddCustomer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmaddpart.resx">
+      <DependentUpon>frmaddpart.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmadmnbos.resx">
+      <DependentUpon>frmadmnbos.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmAddBoats.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAddBoats.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmBOS.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmBOS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\FrmBoats2Order.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmBoats2Order.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmCallLog.resx">
+      <DependentUpon>frmCallLog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmchangepass.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmchangepass.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmCheckIn.resx">
+      <DependentUpon>frmCheckIn.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmcommadjust.resx">
+      <DependentUpon>frmcommadjust.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmcommadjustaddedit.resx">
+      <DependentUpon>frmcommadjustaddedit.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\FrmCustFinder.resx">
+      <DependentUpon>FrmCustFinder.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmEditCustomer.resx">
+      <DependentUpon>frmEditCustomer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmeditinv.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmeditinv.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmequip.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmequip.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmFTPGet.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmFTPGet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\FrmGenComm.resx">
+      <DependentUpon>FrmGenComm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmInsurance.resx">
+      <DependentUpon>frmInsurance.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\FrmIssue.resx">
+      <DependentUpon>FrmIssue.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmLogin.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmmain.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmmain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmInv.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmInv.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmlogpayment.resx">
+      <DependentUpon>frmlogpayment.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmLogWork.resx">
+      <DependentUpon>frmLogWork.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmnewboat.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmnewboat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmNewIssue.resx">
+      <DependentUpon>frmNewIssue.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmnewmotor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmnewmotor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\FRMnote.resx">
+      <DependentUpon>FRMnote.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\FrmPCL.resx">
+      <DependentUpon>FrmPCL.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\FrmPriority.resx">
+      <DependentUpon>FrmPriority.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmQuickPaymentCalc.resx">
+      <DependentUpon>frmQuickPaymentCalc.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmReport.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmReportSelection.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmReportSelection.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmreportwait.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmreportwait.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmSalesman.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSalesman.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmxlsheet.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmxlsheet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmload.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmload.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmOrderBoat.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmOrderBoat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmaddboatsn.resx">
+      <DependentUpon>frmaddboatsn.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmStats.resx">
+      <DependentUpon>frmStats.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmViewPic.resx">
+      <DependentUpon>frmViewPic.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmWarrantyEntry.resx">
+      <DependentUpon>frmWarrantyEntry.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\FrmWO.resx">
+      <DependentUpon>FrmWO.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\frmYTD.resx">
+      <DependentUpon>frmYTD.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\PickStore.resx">
+      <DependentUpon>PickStore.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\pop-ups\RepScreen.resx">
+      <DependentUpon>RepScreen.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="MMSOnline_TemporaryKey.pfx" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Resources\bizman.xls" />
+    <Content Include="Resources\bosblanks\atl.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\bosblanks\BOS2012.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\bosblanks\BOS2012Pg1.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\bosblanks\BOS2012Pg2.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\bosblanks\bth.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\bosblanks\edm.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\bosblanks\gal.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\bosblanks\KEL.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\bosblanks\ogo.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\bosblanks\ren.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\bosblanks\syl.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\AT.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\ATB.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\BlankPage.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\BlankQuote.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\blankwo.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\BO-Profit.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\BoatInspection.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\CAF.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\condWO.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\condWO.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\condWOOld.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\CS.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\CSgpr.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\CSreminder.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\IAP.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\IAP2012.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\IAPgpr.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\InServiceChecklist2013.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\Insurance.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\PartsOrder.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\PCL.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\PCLauth.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\PDIBandO.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\PDIBandS.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\PDIsm.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\PDIT.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\PT.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\SAL2012.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\SALAB.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\SALBC.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\Shorelandr.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\SylvanWARR.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\WaiverIns.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Contracts\WaiverWar.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\pay.xls" />
+    <None Include="Resources\sales.xls" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\leftpanel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Settings\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\SYLlogo.png" />
+    <None Include="Resources\ATLadr.png" />
+    <None Include="Resources\ATLlogo.png" />
+    <None Include="Resources\SYLadr.png" />
+    <None Include="Resources\SPWlogo.png" />
+    <None Include="Resources\RENlogo.png" />
+    <None Include="Resources\Renadr.png" />
+    <None Include="Resources\OGOlogo.png" />
+    <None Include="Resources\Ogoadr.png" />
+    <None Include="Resources\MMSOnline.png" />
+    <None Include="Resources\GALlogo.png" />
+    <None Include="Resources\GALadr.png" />
+    <None Include="Resources\EDMadr.png" />
+    <None Include="Resources\BTHlogopng.png" />
+    <None Include="Resources\BTHadr.png" />
+    <None Include="Resources\BkgTL.png" />
+    <None Include="Resources\BkgSquare.png" />
+    <Content Include="Resources\images\ATLAddr.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\images\ATLlogo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\images\ATLLogo2.png" />
+    <Content Include="Resources\images\ATLLogo2b.png" />
+    <Content Include="Resources\images\BTHAddr.png" />
+    <Content Include="Resources\images\BTHlogo.png" />
+    <Content Include="Resources\images\BTHLogo2.png" />
+    <Content Include="Resources\images\EDMAddr.png" />
+    <Content Include="Resources\images\EDMlogo.png" />
+    <Content Include="Resources\images\EDMlogo2.png" />
+    <Content Include="Resources\images\GALAddr.png" />
+    <Content Include="Resources\images\GALlogo.png" />
+    <Content Include="Resources\images\GALLogo2.png" />
+    <Content Include="Resources\images\KELAddr.png" />
+    <Content Include="Resources\images\KELAddrOld.png" />
+    <Content Include="Resources\images\KELlogo.png" />
+    <Content Include="Resources\images\KELLogo2.png" />
+    <Content Include="Resources\images\OGOAddr.png" />
+    <Content Include="Resources\images\OGOlogo.png" />
+    <Content Include="Resources\images\OGOLogo2.png" />
+    <Content Include="Resources\images\RENAddr.png" />
+    <Content Include="Resources\images\RENlogo.png" />
+    <Content Include="Resources\images\RENLogo2.png" />
+    <Content Include="Resources\images\RENLogo2b.png" />
+    <Content Include="Resources\images\SYLAddr.png" />
+    <Content Include="Resources\images\SYLlogo.png" />
+    <Content Include="Resources\images\SYLLogo2.png" />
+    <Content Include="Resources\images\SYLLogo2b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="MSDATASRC">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
