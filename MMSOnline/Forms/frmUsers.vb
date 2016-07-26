@@ -227,8 +227,8 @@ Public Class frmUsers
                 Try
                     conn.Open()
                     cmd.ExecuteNonQuery()
-                    'cmd.CommandText = "Delete from db where User ='" + persistant.getvalue(persistant.tbl_users, "user", "Name = '" + Me.ListUser.SelectedItem + "'", 0) + "'"
-                    'cmd.ExecuteNonQuery()
+                    cmd.CommandText = "Delete from db where User ='" + persistant.getvalue(persistant.tbl_users, "user", "Name = '" + Me.ListUser.SelectedItem + "'", 0) + "'"
+                    cmd.ExecuteNonQuery()
                     'cmd.CommandText = "Delete from tables_priv where User ='" + persistant.getvalue(persistant.tbl_users, "user", "Name = '" + Me.ListUser.SelectedItem + "'", 0) + "'"
                     'cmd.ExecuteNonQuery()
                     'setprivs(persistant.getvalue(persistant.tbl_users, "user", "Name = '" + Me.ListUser.SelectedItem + "'", 0), persistant.getvalue(persistant.tbl_userlevels, "code", "Level = '" + Me.cmblevel.SelectedItem + "'", 0), conn)
