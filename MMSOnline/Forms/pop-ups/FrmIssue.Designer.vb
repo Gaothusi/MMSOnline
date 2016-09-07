@@ -419,7 +419,7 @@ Partial Class FrmIssue
         Me.Panel1.Location = New System.Drawing.Point(928, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(356, 522)
+        Me.Panel1.Size = New System.Drawing.Size(356, 521)
         Me.Panel1.TabIndex = 1
         '
         'btnClose
@@ -1203,7 +1203,7 @@ Partial Class FrmIssue
         'CmbPkgType
         '
         Me.CmbPkgType.FormattingEnabled = True
-        Me.CmbPkgType.Items.AddRange(New Object() {"Detail", "Shrink Wrap", "Sterndrive 3.0L", "Sterndrive V6 - V8", "2 Stroke OB", "4 Stroke OB", "Trailer", "V - Drive"})
+        Me.CmbPkgType.Items.AddRange(New Object() {"Detail", "Shrink Wrap", "Sterndrive 3.0L", "Sterndrive V6 - V8", "2 Stroke OB", "4 Stroke OB", "Trailer", "V - Drive", "Jet Engine"})
         Me.CmbPkgType.Location = New System.Drawing.Point(136, 340)
         Me.CmbPkgType.Margin = New System.Windows.Forms.Padding(4)
         Me.CmbPkgType.Name = "CmbPkgType"
