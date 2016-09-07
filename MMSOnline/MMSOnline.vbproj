@@ -36,7 +36,7 @@
     <TargetCulture>en-CA</TargetCulture>
     <ProductName>MMSOnline</ProductName>
     <PublisherName>Marine Management Services</PublisherName>
-    <MinimumRequiredVersion>4.0.4.27</MinimumRequiredVersion>
+    <MinimumRequiredVersion>4.0.4.28</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <ApplicationRevision>28</ApplicationRevision>
