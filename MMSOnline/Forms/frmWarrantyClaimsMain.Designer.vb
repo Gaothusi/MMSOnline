@@ -22,7 +22,7 @@ Partial Class frmWarrantyClaimsMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnStatusNone = New System.Windows.Forms.Button()
         Me.btnStatusAll = New System.Windows.Forms.Button()
         Me.btnStoreNone = New System.Windows.Forms.Button()
@@ -188,7 +188,7 @@ Partial Class frmWarrantyClaimsMain
         '
         Me.cboWarrantyType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboWarrantyType.FormattingEnabled = True
-        Me.cboWarrantyType.Items.AddRange(New Object() {"All", "Atlantis", "Bayliner", "Boathouse", "Centurion", "Ez Loader", "Four Winns", "Glastron", "Hewescraft", "Indmar", "Jensen Electronics", "Karavan", "Lighthouse", "Mercury", "Mid West", "Monster", "Monterey", "PCM", "Pro Tech/Diamond Coat", "Prospec Electronics", "Renfrew", "Riverhawk", "Rotax", "Sanger", "Scarab", "Sea Ray", "Shipwreck", "Sylvan/Smoker", "Volvo", "Yamaha"})
+        Me.cboWarrantyType.Items.AddRange(New Object() {"All", "Atlantis", "Bayliner", "Boathouse", "Centurion", "Ez Loader", "Four Winns", "Glastron", "Hewescraft", "Indmar", "Jensen Electronics", "Karavan", "Lighthouse", "Mercury", "Mid West", "Monster", "Monterey", "PCM", "Pro Tech/Diamond Coat", "Prospec Electronics", "Renfrew", "Riverhawk", "Rotax", "Sanger", "Scarab", "Sea Ray", "Shipwreck", "Sylvan/Smoker", "Volvo", "Yamaha", "Other"})
         Me.cboWarrantyType.Location = New System.Drawing.Point(157, 244)
         Me.cboWarrantyType.Margin = New System.Windows.Forms.Padding(4)
         Me.cboWarrantyType.Name = "cboWarrantyType"
@@ -424,8 +424,8 @@ Partial Class frmWarrantyClaimsMain
         Me.DataView.AllowUserToAddRows = False
         Me.DataView.AllowUserToDeleteRows = False
         Me.DataView.AllowUserToOrderColumns = True
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray
-        Me.DataView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray
+        Me.DataView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.DataView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
         Me.DataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Edit})
