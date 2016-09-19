@@ -227,7 +227,7 @@ Public Class frmUsers
                 Try
                     conn.Open()
                     cmd.ExecuteNonQuery()
-                    cmd.CommandText = "Delete from db where User ='" + persistant.getvalue(persistant.tbl_users, "user", "Name = '" + Me.ListUser.SelectedItem + "'", 0) + "'"
+                    cmd.CommandText = "Delete from users where User ='" + persistant.getvalue(persistant.tbl_users, "user", "Name = '" + Me.ListUser.SelectedItem + "'", 0) + "'"
                     cmd.ExecuteNonQuery()
                     'cmd.CommandText = "Delete from tables_priv where User ='" + persistant.getvalue(persistant.tbl_users, "user", "Name = '" + Me.ListUser.SelectedItem + "'", 0) + "'"
                     'cmd.ExecuteNonQuery()
@@ -256,10 +256,11 @@ Public Class frmUsers
             End If
 
             'If level = 9 Then
-            cmd.CommandText = "Insert into db set Host = 'localhost', Db = 'mms', User = '" + user + "'"
-            cmd.ExecuteNonQuery()
-            cmd.CommandText = "Insert into db set Host = 'localhost', Db = 'mysql', User = '" + user + "'"
-            cmd.ExecuteNonQuery()
+            'cmd.CommandText = "Insert into users set Host = 'localhost', Db = 'mms', User = '" + user + "'"
+            'cmd.ExecuteNonQuery()
+            'cmd.CommandText = "Insert into users set Host = 'localhost', Db = 'mysql', User = '" + user + "'"
+            'cmd.ExecuteNonQuery()
+
             'cmd.CommandText = "Insert into db set Host = 'localhost', Db = 'mms', User = '" + user + "', Select_priv = 'Y', Insert_priv = 'Y', Update_priv = 'Y', Delete_priv = 'Y'"
             'cmd.ExecuteNonQuery()
             'cmd.CommandText = "Insert into db set Host = 'localhost', Db = 'mysql', User = '" + user + "', Select_priv = 'Y', Insert_priv = 'Y', Update_priv = 'Y', Delete_priv = 'Y'"
