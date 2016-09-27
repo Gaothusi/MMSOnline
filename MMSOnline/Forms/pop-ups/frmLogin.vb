@@ -3,12 +3,12 @@ Imports MySql.Data.MySqlClient
 
 
 
-<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmLogin
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         If disposing AndAlso components IsNot Nothing Then
             components.Dispose()
@@ -26,7 +26,7 @@ Partial Class frmLogin
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.txtserver = New System.Windows.Forms.TextBox()
         Me.txtusername = New System.Windows.Forms.TextBox()
@@ -236,7 +236,7 @@ Public Class frmLogin
         'persistant.paymentmath.Newb()
         'Me.Text = "MMS Online - Version " + PreFetch.version.ToString
         Dim ver As String = Mid(My.Application.Info.Version.ToString.Replace(".", ""), 1, 3)
-        Me.Text = "MMS Online - Version 4.0.4.32" '& ver.Substring(0, 1) & "." & ver.Substring(1) '3.26"
+        Me.Text = "MMS Online - Version 4.04.34" '& ver.Substring(0, 1) & "." & ver.Substring(1) '3.26"
 
         Me.AcceptButton = cmdLogin
         Me.CancelButton = cmdCancel
@@ -341,7 +341,7 @@ Public Class frmLogin
             'get user info
             conn.Open()
             myCommand.Connection = conn
-            myCommand.CommandText = "SELECT user, password, PASSWORD('" & txtpassword.Text & "') as pswd, usergroup, store, name from users"
+            myCommand.CommandText = "SELECT user, password, PASSWORD('" & txtpassword.Text & "') as pswd, usergroup, store, name from user"
             adpt.SelectCommand = myCommand
             adpt.Fill(persistant.tbl_users)
 
@@ -551,7 +551,7 @@ endp:
             Me.Refresh()
 
         End If
-      
+
         My.Settings.Servername = txtserver.Text
         persistant.serveraddr = txtserver.Text
 
@@ -591,15 +591,15 @@ endp:
 
         If PreFetch.secure = True Then
             myConnString = "server=localhost;" _
-             & "user id=MMSData;" _
+             & "user id=root;" _
              & "password=Filipino;" _
-             & "database=mms;port=" & persistant.port & ";pooling=true;"
+             & "database=mysql;port=" & persistant.port & ";pooling=true;"
 
         Else
             myConnString = "server=" + persistant.serveraddr + ";" _
-             & "user id=MMSData;" _
+             & "user id=root;" _
              & "password=Filipino;" _
-             & "database=mms;port=3306;pooling=true;"
+             & "database=mysql;port=3306;pooling=true;"
         End If
         'If PreFetch.secure = True Then
         '    myConnString = "server=localhost;" _
@@ -620,17 +620,17 @@ endp:
             'get user info
             conn.Open()
             myCommand.Connection = conn
-            myCommand.CommandText = "SELECT user, password, PASSWORD('" & txtpassword.Text & "') as pswd, usergroup, store, name from users"
+            myCommand.CommandText = "SELECT user, password, PASSWORD('" & txtpassword.Text & "') as pswd, usergroup, store, name from user"
             adpt.SelectCommand = myCommand
             adpt.Fill(persistant.tbl_users)
 
             Dim strPass As String = persistant.getvalue(persistant.tbl_users, "password", "user = '" + txtusername.Text + "'", 0)
             Dim strPass2 As String = persistant.getvalue(persistant.tbl_users, "pswd", "user = '" + txtusername.Text + "'", 0)
-            'If Not strPass = strPass2 Then
-            '    MessageBox.Show("Incorrect User Name or Password")
-            '    Application.Exit()
-            '    Exit Sub
-            'End If
+            If Not strPass = strPass2 Then
+                MessageBox.Show("Incorrect User Name or Password")
+                Application.Exit()
+                Exit Sub
+            End If
             persistant.myuserLEVEL = persistant.getvalue(persistant.tbl_users, "usergroup", "user = '" + txtusername.Text + "'", 0)
             persistant.mystore = persistant.getvalue(persistant.tbl_users, "store", "user = '" + txtusername.Text + "'", 0)
             persistant.myusername = persistant.getvalue(persistant.tbl_users, "name", "user = '" + txtusername.Text + "'", 0)
@@ -638,53 +638,17 @@ endp:
             'done
             conn.Close()
 
-            'If PreFetch.secure = True Then
-            '    myConnString = "server=localhost;" _
-            '     & "user id=" & txtusername.Text & ";" _
-            '     & "password=" & txtpassword.Text & ";" _
-            '     & "database=mms;port=" & persistant.port & ";pooling=true;"
-            'Else
-            '    myConnString = "server=" + persistant.serveraddr + ";" _
-            '     & "user id=" & txtusername.Text & ";" _
-            '     & "password=" & txtpassword.Text & ";" _
-            '     & "database=mms;port=3306;pooling=true;"
-            'End If
-
-
-            'If PreFetch.secure = True Then
-            '    myConnString = "server=localhost;" _
-            '     & "user id=Dave;" _
-            '     & "password=Filipino;" _
-            '     & "database=mms;port=" & persistant.port & ";pooling=true;"
-            'Else
-            '    myConnString = "server=" + persistant.serveraddr + ";" _
-            '     & "user id=Dave;" _
-            '     & "password=Filipino;" _
-            '     & "database=mms;port=3306;pooling=true;"
-            'End If
-
             If PreFetch.secure = True Then
                 myConnString = "server=localhost;" _
-                 & "user id=MMSData;" _
+                 & "user id=root;" _
                  & "password=Filipino;" _
                  & "database=mms;port=" & persistant.port & ";pooling=true;"
             Else
                 myConnString = "server=" + persistant.serveraddr + ";" _
-                 & "user id=MMSData;" _
+                 & "user id=root;" _
                  & "password=Filipino;" _
                  & "database=mms;port=3306;pooling=true;"
             End If
-            'If PreFetch.secure = True Then
-            '    myConnString = "server=localhost;" _
-            '     & "user id=root;" _
-            '     & "password=Filipino;" _
-            '     & "database=mms;port=" & persistant.port & ";pooling=true;"
-            'Else
-            '    myConnString = "server=" + persistant.serveraddr + ";" _
-            '     & "user id=root;" _
-            '     & "password=Filipino;" _
-            '     & "database=mms;port=3306;pooling=true;"
-            'End If
             persistant.myconnstring = myConnString
 
             persistant.password = txtpassword.Text
@@ -719,7 +683,6 @@ endp:
                 persistant.tunnel = Nothing
                 persistant.jschx = Nothing
             End If
-
             persistant = Nothing
             GC.Collect()
             GC.WaitForPendingFinalizers()

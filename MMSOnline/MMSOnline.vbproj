@@ -36,10 +36,10 @@
     <TargetCulture>en-CA</TargetCulture>
     <ProductName>MMSOnline</ProductName>
     <PublisherName>Marine Management Services</PublisherName>
-    <MinimumRequiredVersion>4.0.4.32</MinimumRequiredVersion>
+    <MinimumRequiredVersion>4.0.4.35</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>33</ApplicationRevision>
+    <ApplicationRevision>36</ApplicationRevision>
     <ApplicationVersion>4.0.4.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -71,16 +71,16 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>FA5916DE72B9BBA9D2AD68D1B2A59CBF98D3F389</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>CF79D2340BF14F0CFD5A527C4786595C552C3F86</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>MMSOnline_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>MMSOnline_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AxInterop.OWC11, Version=11.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
@@ -795,6 +795,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="MMSOnline_1_TemporaryKey.pfx" />
     <None Include="MMSOnline_TemporaryKey.pfx" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">

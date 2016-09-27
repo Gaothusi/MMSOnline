@@ -167,7 +167,7 @@ Public Class frmServiceMain
         'End Try
 
         myConnString = "server=localhost;" _
-                  & "user id=MMSData;" _
+                  & "user id=root;" _
                   & "password=Filipino;" _
                  & ";database=mms;port=" & persistant.port & ";pooling=true;"
 

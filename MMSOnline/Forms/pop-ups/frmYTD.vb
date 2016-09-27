@@ -35,12 +35,12 @@ Public Class frmYTD
 
         If PreFetch.secure = True Then
             conn.ConnectionString = "server=localhost;" _
-              & "user id=MMSData;" _
+              & "user id=root;" _
               & "password=Filipino;" _
               & "database=mysql;port=" & persistant.port
         Else
             conn.ConnectionString = "server=" + persistant.serveraddr + ";" _
-                   & "user id=MMSData;" _
+                   & "user id=root;" _
                    & "password=Filipino;" _
                    & "database=mysql;port=3306;pooling=true;"
         End If
@@ -134,13 +134,13 @@ Public Class frmYTD
 
         If PreFetch.secure = True Then
             conn.ConnectionString = "server=localhost;" _
-              & "user id=MMSData;" _
+              & "user id=root;" _
               & "password=Filipino;" _
               & "database=mysql;port=" & persistant.port
 
         Else
             conn.ConnectionString = "server=" + persistant.serveraddr + ";" _
-                   & "user id=MMSData;" _
+                   & "user id=root;" _
                    & "password=Filipino;" _
                    & "database=mysql;port=3306;pooling=true;"
         End If
