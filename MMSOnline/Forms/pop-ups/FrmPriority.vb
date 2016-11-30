@@ -16,9 +16,20 @@ Public Class FrmPriority
     Dim conn As New MySqlConnection
 
     Private Sub buildlists()
-        For x As Integer = 0 To (persistant.howmanyrows(persistant.tbl_location, "") - 1)
-            If persistant.getvalue(persistant.tbl_location, "Code", "", x) <> "ADM" Then Me.liststore.Items.Add(persistant.getvalue(persistant.tbl_location, "Store", "", x))
-        Next
+        'for development troubleshooting
+        Dim tempStoreName = persistant.mystoreCODE
+        If persistant.mystoreCODE = "ADM" Then
+            For x As Integer = 0 To (persistant.howmanyrows(persistant.tbl_location, "") - 1)
+                If persistant.getvalue(persistant.tbl_location, "Code", "", x) <> "ADM" Then Me.liststore.Items.Add(persistant.getvalue(persistant.tbl_location, "Store", "", x))
+            Next
+        Else
+            Me.liststore.Items.Add(persistant.mystore)
+        End If
+
+        'end of dev troubeshooting
+        'For x As Integer = 0 To (persistant.howmanyrows(persistant.tbl_location, "") - 1)
+        '    If persistant.getvalue(persistant.tbl_location, "Code", "", x) <> "ADM" Then Me.liststore.Items.Add(persistant.getvalue(persistant.tbl_location, "Store", "", x))
+        'Next
         For x As Integer = 0 To (liststore.Items.Count() - 1)
             If liststore.Items(x) = persistant.mystore Then liststore.SelectedItems.Add(liststore.Items(x))
         Next x
