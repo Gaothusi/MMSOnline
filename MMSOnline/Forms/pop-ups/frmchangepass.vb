@@ -44,12 +44,12 @@ Public Class frmchangepass
 
                     If PreFetch.secure = True Then
                         persistant.myconnstring = "server=localhost;" _
-                     & "user id=root;" _
+                     & "user id=MMSData;" _
                      & "password=Filipino;" _
                      & "database=mms;port=" & persistant.port & ";pooling=true;"
                     Else
                         persistant.myconnstring = "server=" + persistant.serveraddr + ";" _
-                    & "user id=root;" _
+                    & "user id=MMsData;" _
                     & "password=Filipino;" _
                     & "database=mms;port=3306;pooling=true;"
                     End If

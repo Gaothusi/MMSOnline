@@ -236,7 +236,7 @@ Public Class frmLogin
         'persistant.paymentmath.Newb()
         'Me.Text = "MMS Online - Version " + PreFetch.version.ToString
         Dim ver As String = Mid(My.Application.Info.Version.ToString.Replace(".", ""), 1, 3)
-        Me.Text = "MMS Online - Version 4.04.37" '& ver.Substring(0, 1) & "." & ver.Substring(1) '3.26"
+        Me.Text = "MMS Online - Version 4.04.38" '& ver.Substring(0, 1) & "." & ver.Substring(1) '3.26"
 
         Me.AcceptButton = cmdLogin
         Me.CancelButton = cmdCancel
@@ -591,13 +591,13 @@ endp:
 
         If PreFetch.secure = True Then
             myConnString = "server=localhost;" _
-             & "user id=root;" _
+             & "user id=MMSData;" _
              & "password=Filipino;" _
              & "database=mysql;port=" & persistant.port & ";pooling=true;"
 
         Else
             myConnString = "server=" + persistant.serveraddr + ";" _
-             & "user id=root;" _
+             & "user id=MMSData;" _
              & "password=Filipino;" _
              & "database=mysql;port=3306;pooling=true;"
         End If
@@ -640,12 +640,12 @@ endp:
 
             If PreFetch.secure = True Then
                 myConnString = "server=localhost;" _
-                 & "user id=root;" _
+                 & "user id=MMSData;" _
                  & "password=Filipino;" _
                  & "database=mms;port=" & persistant.port & ";pooling=true;"
             Else
                 myConnString = "server=" + persistant.serveraddr + ";" _
-                 & "user id=root;" _
+                 & "user id=MMSData;" _
                  & "password=Filipino;" _
                  & "database=mms;port=3306;pooling=true;"
             End If

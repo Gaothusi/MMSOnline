@@ -385,12 +385,12 @@ Public Class FrmGenComm
 
             If PreFetch.secure = True Then
                 conn.ConnectionString = "server=localhost;" _
-                      & "user id=root;" _
+                      & "user id=MMSData;" _
                       & "password=Filipino;" _
                       & "database=mysql;port=" & persistant.port
             Else
                 conn.ConnectionString = "server=" + persistant.serveraddr + ";" _
-                       & "user id=root;" _
+                       & "user id=MMSData;" _
                        & "password=Filipino;" _
                        & "database=mysql;port=3306;pooling=true;"
             End If
