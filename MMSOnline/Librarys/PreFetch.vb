@@ -187,7 +187,7 @@ Public Class PreFetch
                 '    & "password=Filipino;" _
                 '    & "database=mysql;port=" & port
                 Dim tempconstring = "server=localhost;" _
-                    & "user id=root;" _
+                    & "user id=MMSData;" _
                     & "password=Filipino;" _
                     & "database=mysql;port=" & port
                 'Dim tempconstring = "server=localhost;" _

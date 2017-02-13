@@ -6496,7 +6496,7 @@ Public Class frmBOS
 
         Dim pick As New frmSalesman
         pick.persistant = persistant
-        pick.filter = "User <> 'root'"
+        pick.filter = "User <> 'MMSData'"
         pick.ShowDialog()
         If persistant.temppass <> "None" Then
             Me.txtsalesman.Text = persistant.getvalue(persistant.tbl_users, "user", "name = '" + persistant.temppass + "'", 0)
@@ -6512,7 +6512,7 @@ Public Class frmBOS
 
         Dim pick As New frmSalesman
         pick.persistant = persistant
-        pick.filter = "User <> 'root'"
+        pick.filter = "User <> 'MMSData'"
         pick.ShowDialog()
         If persistant.temppass <> "None" Then
             Me.txtsalesman2.Text = persistant.getvalue(persistant.tbl_users, "user", "name = '" + persistant.temppass + "'", 0)

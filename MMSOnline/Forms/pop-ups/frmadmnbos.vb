@@ -104,8 +104,8 @@ Public Class frmadmnbos
 
         ListBox1.Items.Add("None")
 
-        For x As Integer = 0 To (persistant.howmanyrows(persistant.tbl_users, "User <> 'root'") - 1)
-            ListBox1.Items.Add(persistant.getvalue(persistant.tbl_users, "name", "User <> 'root'", x))
+        For x As Integer = 0 To (persistant.howmanyrows(persistant.tbl_users, "User <> 'MMSData'") - 1)
+            ListBox1.Items.Add(persistant.getvalue(persistant.tbl_users, "name", "User <> 'MMSData'", x))
         Next
         ListBox1.SelectedIndex = 0
 
