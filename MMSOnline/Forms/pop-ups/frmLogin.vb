@@ -236,7 +236,7 @@ Public Class frmLogin
         'persistant.paymentmath.Newb()
         'Me.Text = "MMS Online - Version " + PreFetch.version.ToString
         Dim ver As String = Mid(My.Application.Info.Version.ToString.Replace(".", ""), 1, 3)
-        Me.Text = "MMS Online - Version 4.04.39" '& ver.Substring(0, 1) & "." & ver.Substring(1) '3.26"
+        Me.Text = "MMS Online - Version 4.04.40" '& ver.Substring(0, 1) & "." & ver.Substring(1) '3.26"
 
         Me.AcceptButton = cmdLogin
         Me.CancelButton = cmdCancel
@@ -561,32 +561,6 @@ endp:
         Else
             My.Settings.Username = ""
         End If
-        'If PreFetch.secure = True Then
-        '    myConnString = "server=localhost;" _
-        '     & "user id=" & txtusername.Text & ";" _
-        '     & "password=" & txtpassword.Text & ";" _
-        '     & "database=mysql;port=" & persistant.port & ";pooling=true;"
-
-        'Else
-        '    myConnString = "server=" + persistant.serveraddr + ";" _
-        '     & "user id=" & txtusername.Text & ";" _
-        '     & "password=" & txtpassword.Text & ";" _
-        '     & "database=mysql;port=3306;pooling=true;"
-        'End If
-
-        'If PreFetch.secure = True Then
-        '    myConnString = "server=localhost;" _
-        '     & "user id=Dave;" _
-        '     & "password=Filipino;" _
-        '     & "database=mysql;port=" & persistant.port & ";pooling=true;"
-
-        'Else
-        '    myConnString = "server=" + persistant.serveraddr + ";" _
-        '     & "user id=Dave;" _
-        '     & "password=Filipino;" _
-        '     & "database=mysql;port=3306;pooling=true;"
-        'End If
-
 
 
         If PreFetch.secure = True Then
@@ -601,18 +575,7 @@ endp:
              & "password=Filipino;" _
              & "database=mysql;port=3306;pooling=true;"
         End If
-        'If PreFetch.secure = True Then
-        '    myConnString = "server=localhost;" _
-        '     & "user id=root;" _
-        '     & "password=Filipino;" _
-        '     & "database=mysql;port=" & persistant.port & ";pooling=true;"
 
-        'Else
-        '    myConnString = "server=" + persistant.serveraddr + ";" _
-        '     & "user id=root;" _
-        '     & "password=Filipino;" _
-        '     & "database=mysql;port=3306;pooling=true;"
-        'End If
 
         conn.ConnectionString = myConnString
 

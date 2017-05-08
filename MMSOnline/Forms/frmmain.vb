@@ -15,7 +15,7 @@ Public Class frmmain
 
     Private Sub frmmain_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
-        If persistant.myusername.ToLower = "dave" Then
+        If persistant.myusername.ToLower = "wabuyag" Then
             lblTesting.Visible = True
         End If
         btndoesdisplay(Me.btnWinterizeEmails, persistant.myuserLEVEL, 9)
@@ -37,13 +37,13 @@ Public Class frmmain
         btndoesdisplay(Me.btnApprovedOrders, persistant.myuserLEVEL, 9)
         'btndoesdisplay(Me.btnUserManagement, persistant.myuserLEVEL, 9)
         'restrict this to select few people to avoid user rights getting messed up.
-        If persistant.myuserID.ToLower = "dave" Or _
-           persistant.myuserID.ToLower = "dank" Or _
-           persistant.myuserID.ToLower = "rob" Or _
-           persistant.myuserID.ToLower = "pat2013" Or _
-           persistant.myuserID.ToLower = "freddie2012" Or _
-           persistant.myuserID.ToLower = "fredtech" Or _
-           persistant.myuserID.ToLower = "fredadmin" Or _
+        If persistant.myuserID.ToLower = "wabuyag" Or
+           persistant.myuserID.ToLower = "dank" Or
+           persistant.myuserID.ToLower = "rob" Or
+           persistant.myuserID.ToLower = "pat2013" Or
+           persistant.myuserID.ToLower = "freddie2012" Or
+           persistant.myuserID.ToLower = "fredtech" Or
+           persistant.myuserID.ToLower = "fredadmin" Or
            persistant.myuserID.ToLower = "freddie" Then
             btnUserManagement.Visible = True
         End If
@@ -219,19 +219,38 @@ start:
         listStore.Items.Clear()
 
         listStore.Items.Add("Atlantis AB") 'to view old records.
-        For x As Integer = 0 To (persistant.howmanyrows(persistant.tbl_location, "Prnt = '" + persistant.myparent + "'") - 1)
-            If persistant.getvalue(persistant.tbl_location, "Store", "Prnt = '" + persistant.myparent + "'", x) <> "Admin" Then listStore.Items.Add(persistant.getvalue(persistant.tbl_location, "Store", "Prnt = '" + persistant.myparent + "'", x))
-        Next
 
+        'For x As Integer = 0 To (persistant.howmanyrows(persistant.tbl_location, "Prnt = '" + persistant.myparent + "'") - 1)
+        '    If persistant.getvalue(persistant.tbl_location, "Store", "Prnt = '" + persistant.myparent + "'", x) <> "Admin" Then listStore.Items.Add(persistant.getvalue(persistant.tbl_location, "Store", "Prnt = '" + persistant.myparent + "'", x))
+        'Next
+
+        If persistant.mystore = "Admin" Then
+            For x As Integer = 0 To (persistant.howmanyrows(persistant.tbl_location, "Prnt = '" + persistant.myparent + "'") - 1)
+                If persistant.getvalue(persistant.tbl_location, "Store", "", x) <> "Admin" Then
+
+                    listStore.Items.Add(persistant.getvalue(persistant.tbl_location, "Store", "Prnt = '" + persistant.myparent + "'", x))
+                Else
+                    'Do nothing
+                End If
+            Next
+            'For x As Integer = 0 To (persistant.howmanyrows(persistant.tbl_location, "Prnt <> '" + persistant.myparent + "'") - 1)
+            '    If persistant.getvalue(persistant.tbl_location, "Store", "Prnt <> '" + persistant.myparent + "'", x) <> "Admin" Then listStore.Items.Add(persistant.getvalue(persistant.tbl_location, "Store", "Prnt <> '" + persistant.myparent + "'", x))
+            'Next
+            listStore.Items.Add("Boat House")
+        Else
+            'If persistant.getvalue(persistant.tbl_location, "Store", "", x) = persistant.mystore Then
+            listStore.Items.Add(persistant.mystore)
+            'End If
+        End If
+
+        listStore.Sorted = True
 
         If loaded = False Then
             For x As Integer = 0 To (listStore.Items.Count() - 1)
                 listStore.SetItemChecked(x, True)
             Next x
         End If
-        For x As Integer = 0 To (persistant.howmanyrows(persistant.tbl_location, "Prnt <> '" + persistant.myparent + "'") - 1)
-            If persistant.getvalue(persistant.tbl_location, "Store", "Prnt <> '" + persistant.myparent + "'", x) <> "Admin" Then listStore.Items.Add(persistant.getvalue(persistant.tbl_location, "Store", "Prnt <> '" + persistant.myparent + "'", x))
-        Next
+
 
 
         If persistant.mystore = "Admin" Then
@@ -287,9 +306,20 @@ start:
 
         listStore.Items.Add("Atlantis AB") 'Add this to view old BOS's.
 
-        For x As Integer = 0 To (persistant.howmanyrows(persistant.tbl_location, "Prnt = '" + persistant.myparent + "'") - 1)
-            If persistant.getvalue(persistant.tbl_location, "Store", "", x) <> "Admin" Then listStore.Items.Add(persistant.getvalue(persistant.tbl_location, "Store", "Prnt = '" + persistant.myparent + "'", x))
-        Next
+        If persistant.mystore = "Admin" Then
+            For x As Integer = 0 To (persistant.howmanyrows(persistant.tbl_location, "Prnt = '" + persistant.myparent + "'") - 1)
+                'If persistant.getvalue(persistant.tbl_location, "Store", "", x) <> "Admin" Then
+
+                listStore.Items.Add(persistant.getvalue(persistant.tbl_location, "Store", "Prnt = '" + persistant.myparent + "'", x))
+                'Else
+                'Do nothing
+                'End If
+            Next
+        Else
+            'If persistant.getvalue(persistant.tbl_location, "Store", "", x) = persistant.mystore Then
+            listStore.Items.Add(persistant.mystore)
+            'End If
+        End If
 
         For x As Integer = 0 To (persistant.howmanyrows(persistant.tbl_status, "") - 1)
             If persistant.getvalue(persistant.tbl_status, "State", "Code = '" + x.ToString + "'", 0) <> "Available" Then listStatus.Items.Add(persistant.getvalue(persistant.tbl_status, "State", "Code = '" + x.ToString + "'", 0))

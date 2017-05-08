@@ -169,7 +169,7 @@ Public Class frmServiceMain
         myConnString = "server=localhost;" _
                   & "user id=MMSData;" _
                   & "password=Filipino;" _
-                 & ";database=mms;port=" & persistant.port & ";pooling=true;"
+                 & ";database=mysql;port=" & persistant.port & ";pooling=true;"
 
         conn.ConnectionString = myConnString
 
@@ -177,7 +177,7 @@ Public Class frmServiceMain
             'get user info
             conn.Open()
             myCommand.Connection = conn
-            myCommand.CommandText = "SELECT user, password, PASSWORD('" & persistant.password & "') as pswd, usergroup, store, name from users"
+            myCommand.CommandText = "SELECT user, password, PASSWORD('" & persistant.password & "') as pswd, usergroup, store, name from user"
             adptTemp.SelectCommand = myCommand
             adptTemp.Fill(persistant.tbl_temp_SWO_Users)
 

@@ -4,6 +4,7 @@ Public Class frmUsers
     Public persistant As PreFetch
 
     Private connstring As String
+    Private MMSconnstring As String
     Private mode As Integer
     '1 = add
     '2 = remove
@@ -43,8 +44,16 @@ Public Class frmUsers
                   & "user id=MMSData;" _
                   & "password=Filipino;" _
                   & "database=mysql;port=" & persistant.port
+            MMSconnstring = "server=localhost;" _
+                  & "user id=MMSData;" _
+                  & "password=Filipino;" _
+                  & "database=mms;port=" & persistant.port
         Else
             connstring = "server=" + persistant.serveraddr + ";" _
+                   & "user id=MMSData;" _
+                   & "password=Filipino;" _
+                   & "database=mysql;port=3306;pooling=true;"
+            MMSconnstring = "server=" + persistant.serveraddr + ";" _
                    & "user id=MMSData;" _
                    & "password=Filipino;" _
                    & "database=mysql;port=3306;pooling=true;"
@@ -199,6 +208,27 @@ Public Class frmUsers
                     setprivs(clean(Me.txtlogin.Text), persistant.getvalue(persistant.tbl_userlevels, "code", "Level = '" + Me.cmblevel.SelectedItem + "'", 0), conn)
 
                     conn.Close()
+                    'Me.txtfullname.Text = ""
+                    'Me.txtlogin.Text = ""
+                    'Me.txtpassword.Text = ""
+                    'Me.cmbstore.SelectedIndex = -1
+                    'Me.cmblevel.SelectedIndex = -1
+                Catch ex As MySqlException
+                    MessageBox.Show(ex.Message)
+                End Try
+                conn.Dispose()
+
+                'Connect MMS database and add user there too
+                conn.ConnectionString = MMSconnstring
+                cmd.Connection = conn
+                Try
+                    conn.Open()
+
+                    cmd.CommandText = "Insert into users set User ='" + clean(Me.txtlogin.Text) + "', name ='" + clean(Me.txtfullname.Text) + "', store ='" + Me.cmbstore.SelectedItem + "', usergroup ='" + persistant.getvalue(persistant.tbl_userlevels, "code", "Level = '" + Me.cmblevel.SelectedItem + "'", 0) + "', password = PASSWORD('" + clean(Me.txtpassword.Text) + "')"
+                    cmd.ExecuteNonQuery()
+                    'setprivs(clean(Me.txtlogin.Text), persistant.getvalue(persistant.tbl_userlevels, "code", "Level = '" + Me.cmblevel.SelectedItem + "'", 0), conn)
+
+                    conn.Close()
                     Me.txtfullname.Text = ""
                     Me.txtlogin.Text = ""
                     Me.txtpassword.Text = ""
@@ -208,7 +238,6 @@ Public Class frmUsers
                     MessageBox.Show(ex.Message)
                 End Try
                 conn.Dispose()
-
             End If
 
             'Modify
@@ -227,12 +256,27 @@ Public Class frmUsers
                 Try
                     conn.Open()
                     cmd.ExecuteNonQuery()
-                    'cmd.CommandText = "Delete from db where User ='" + persistant.getvalue(persistant.tbl_users, "user", "Name = '" + Me.ListUser.SelectedItem + "'", 0) + "'"
-                    'cmd.ExecuteNonQuery()
-                    'cmd.CommandText = "Delete from tables_priv where User ='" + persistant.getvalue(persistant.tbl_users, "user", "Name = '" + Me.ListUser.SelectedItem + "'", 0) + "'"
-                    'cmd.ExecuteNonQuery()
-                    'setprivs(persistant.getvalue(persistant.tbl_users, "user", "Name = '" + Me.ListUser.SelectedItem + "'", 0), persistant.getvalue(persistant.tbl_userlevels, "code", "Level = '" + Me.cmblevel.SelectedItem + "'", 0), conn)
+                    conn.Close()
 
+                    Me.txtpassword.Text = "*********"
+                Catch ex As MySqlException
+                    MessageBox.Show(ex.Message)
+                End Try
+                conn.Dispose()
+
+                'Do the same in MMS database
+                conn.ConnectionString = connstring
+                cmd.Connection = conn
+                If Me.txtpassword.Text = "*********" Then
+                    cmd.CommandText = "Update users set name ='" + clean(Me.txtfullname.Text) + "', store ='" + Me.cmbstore.SelectedItem + "', usergroup ='" + persistant.getvalue(persistant.tbl_userlevels, "code", "Level = '" + Me.cmblevel.SelectedItem + "'", 0) + "'" _
+                                          & " where User ='" + clean(Me.txtlogin.Text) + "'"
+                Else
+                    cmd.CommandText = "Update users set name ='" + clean(Me.txtfullname.Text) + "', store ='" + Me.cmbstore.SelectedItem + "', usergroup ='" + persistant.getvalue(persistant.tbl_userlevels, "code", "Level = '" + Me.cmblevel.SelectedItem + "'", 0) + "', password = PASSWORD('" + clean(Me.txtpassword.Text) + "')" _
+                               & " where User ='" + clean(Me.txtlogin.Text) + "'"
+                End If
+                Try
+                    conn.Open()
+                    cmd.ExecuteNonQuery()
                     conn.Close()
 
                     Me.txtpassword.Text = "*********"
@@ -362,6 +406,26 @@ Public Class frmUsers
                 cmd.ExecuteNonQuery()
                 cmd.CommandText = "Delete from db where User ='" + persistant.getvalue(persistant.tbl_users, "user", "Name = '" + Me.ListUser.SelectedItem + "'", 0) + "'"
                 cmd.ExecuteNonQuery()
+                'cmd.CommandText = "Delete from tables_priv where User ='" + persistant.getvalue(persistant.tbl_users, "user", "Name = '" + Me.ListUser.SelectedItem + "'", 0) + "'"
+                'cmd.ExecuteNonQuery()
+                'cmd.CommandText = "flush privileges"
+                'cmd.ExecuteNonQuery()
+                conn.Close()
+                refreshusers()
+            Catch ex As MySqlException
+                MessageBox.Show(ex.Message)
+            End Try
+            conn.Dispose()
+
+            'Remove user from MMS users table
+            conn.ConnectionString = MMSconnstring
+            cmd.Connection = conn
+            Try
+                conn.Open()
+                cmd.CommandText = "Delete from users where User ='" + persistant.getvalue(persistant.tbl_users, "user", "Name = '" + Me.ListUser.SelectedItem + "'", 0) + "'"
+                cmd.ExecuteNonQuery()
+                'cmd.CommandText = "Delete from db where User ='" + persistant.getvalue(persistant.tbl_users, "user", "Name = '" + Me.ListUser.SelectedItem + "'", 0) + "'"
+                'cmd.ExecuteNonQuery()
                 'cmd.CommandText = "Delete from tables_priv where User ='" + persistant.getvalue(persistant.tbl_users, "user", "Name = '" + Me.ListUser.SelectedItem + "'", 0) + "'"
                 'cmd.ExecuteNonQuery()
                 'cmd.CommandText = "flush privileges"
