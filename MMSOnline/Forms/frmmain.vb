@@ -237,6 +237,10 @@ start:
             '    If persistant.getvalue(persistant.tbl_location, "Store", "Prnt <> '" + persistant.myparent + "'", x) <> "Admin" Then listStore.Items.Add(persistant.getvalue(persistant.tbl_location, "Store", "Prnt <> '" + persistant.myparent + "'", x))
             'Next
             listStore.Items.Add("Boat House")
+            listStore.Items.Add("Atlantis BC")
+            listStore.Items.Add("Galleon")
+
+
         Else
             'If persistant.getvalue(persistant.tbl_location, "Store", "", x) = persistant.mystore Then
             listStore.Items.Add(persistant.mystore)
