@@ -11,8 +11,7 @@
     <RootNamespace>MMSOnline</RootNamespace>
     <AssemblyName>MMSOnline</AssemblyName>
     <MyType>WindowsForms</MyType>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>MMSOnline_Icon.ico</ApplicationIcon>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -36,10 +35,10 @@
     <TargetCulture>en-CA</TargetCulture>
     <ProductName>MMSOnline</ProductName>
     <PublisherName>Marine Management Services</PublisherName>
-    <MinimumRequiredVersion>4.0.4.40</MinimumRequiredVersion>
+    <MinimumRequiredVersion>4.0.4.41</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>41</ApplicationRevision>
+    <ApplicationRevision>42</ApplicationRevision>
     <ApplicationVersion>4.0.4.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -808,6 +807,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="Resources\bizman.xls" />
+    <Content Include="MMSOnline_Icon.ico" />
     <Content Include="Resources\bosblanks\atl.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
