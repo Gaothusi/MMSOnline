@@ -35,10 +35,10 @@
     <TargetCulture>en-CA</TargetCulture>
     <ProductName>MMSOnline</ProductName>
     <PublisherName>Marine Management Services</PublisherName>
-    <MinimumRequiredVersion>4.0.4.41</MinimumRequiredVersion>
+    <MinimumRequiredVersion>4.0.4.43</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>42</ApplicationRevision>
+    <ApplicationRevision>44</ApplicationRevision>
     <ApplicationVersion>4.0.4.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>

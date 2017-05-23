@@ -459,7 +459,13 @@ start:
             Next x
         End If
 
-        fstring = "b.Store IN (" + sstring + ") AND "
+        'Identify Salesman and search all Stores for BOS with their names: Requested by Dank on May 17th 2017
+        If persistant.myuserLEVEL = 6 Then
+            fstring = "b.Store RLIKE '.*' AND "
+        Else
+            fstring = "b.Store IN (" + sstring + ") AND "
+
+        End If
 
         'BRAND
         If comboBrand.SelectedItem.ToString <> "All" Then
