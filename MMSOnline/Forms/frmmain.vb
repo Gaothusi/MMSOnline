@@ -460,7 +460,7 @@ start:
         End If
 
         'Identify Salesman and search all Stores for BOS with their names: Requested by Dank on May 17th 2017
-        If persistant.myuserLEVEL = 6 Then
+        If persistant.myuserLEVEL = 2 Or persistant.myuserLEVEL = 3 Or persistant.myuserLEVEL = 5 Then
             fstring = "b.Store RLIKE '.*' AND "
         Else
             fstring = "b.Store IN (" + sstring + ") AND "

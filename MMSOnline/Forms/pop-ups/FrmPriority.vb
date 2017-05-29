@@ -42,7 +42,7 @@ Public Class FrmPriority
         For x As Integer = 0 To IssuesforthoseWOs.Rows.Count - 1
             For xx As Integer = 0 To mydata.Rows.Count - 1
                 If IssuesforthoseWOs.Rows(x).Item("Store") = mydata.Rows(xx).Item("Store") And IssuesforthoseWOs.Rows(x).Item("WO") = mydata.Rows(xx).Item("WO") Then
-                    mydata.Rows(xx).Item("Type") = mydata.Rows(xx).Item("Type") + " " + IssuesforthoseWOs.Rows(x).Item("Type")
+                    mydata.Rows(xx).Item("Description of Work") = mydata.Rows(xx).Item("Description of Work") + " " + IssuesforthoseWOs.Rows(x).Item("Description of Work")
                 End If
             Next
         Next
@@ -61,13 +61,13 @@ Public Class FrmPriority
 
 
     Private Function buildsql() As String
-        Dim selecttext As String = "select `ServicePriority`.`number` AS `number`,`ServicePriority`.`priority` AS `prioritynumber`,`ServicePriority`.`WO` AS `WO`,`ServicePriority`.`Store` AS `Store`,`ServicePriority`.`Tech` AS `Tech`,`ServiceCustomers`.`Name` AS `Name`, `ServiceWO`.`DateReqComp` AS `Date Requested`,`ServiceWO`.`Status` AS `Status`, `ServiceCustomers`.`Bmake` AS `Make`,`ServiceCustomers`.`Bmodel` AS `Model`,`ServiceCustomers`.`Mmodel` AS `Engine`,`ServiceCustomers`.`Color` AS `Color`, `ServiceWO`.`Priority` AS `Priority`,'' as 'Type',`ServiceWO`.`DateActDropOff` AS `Dropped Off` from ((`ServiceWO` join `ServicePriority` on(((`ServiceWO`.`Number` = `ServicePriority`.`WO`) and (`ServiceWO`.`Store` = `ServicePriority`.`Store`)))) join `ServiceCustomers` on((`ServiceCustomers`.`Number` = `ServiceWO`.`CustomerProfile`)))"
+        Dim selecttext As String = "select `ServicePriority`.`number` AS `number`,`ServicePriority`.`priority` AS `prioritynumber`,`ServicePriority`.`WO` AS `WO`,`ServicePriority`.`Store` AS `Store`,`ServicePriority`.`Tech` AS `Tech`,`ServiceCustomers`.`Name` AS `Name`, `ServiceWO`.`DateReqComp` AS `Date Requested`,`ServiceWO`.`Status` AS `Status`, `ServiceCustomers`.`Bmake` AS `Make`,`ServiceCustomers`.`Bmodel` AS `Model`,`ServiceCustomers`.`Mmodel` AS `Engine`,`ServiceCustomers`.`Color` AS `Color`, `ServiceWO`.`Priority` AS `Priority`,'' as 'Description of Work',`ServiceWO`.`DateActDropOff` AS `Dropped Off` from ((`ServiceWO` join `ServicePriority` on(((`ServiceWO`.`Number` = `ServicePriority`.`WO`) and (`ServiceWO`.`Store` = `ServicePriority`.`Store`)))) join `ServiceCustomers` on((`ServiceCustomers`.`Number` = `ServiceWO`.`CustomerProfile`)))"
         buildsql = selecttext + " WHERE `ServicePriority`.`Store` IN (" + store + ") AND `ServicePriority`.`Tech` = '" + tech + "' and ServiceWO.Status = 'Active'   order by `ServiceWO`.`Priority`"
         ' 
     End Function
 
     Private Function buildsql2() As String
-        Dim selecttext As String = "select `ServiceIssue`.`Type` AS `Type`,`ServicePriority`.`Store` AS `Store`,`ServicePriority`.`WO` AS `WO` from ((`ServicePriority` join `ServiceWOtoIssue` on(((`ServicePriority`.`WO` = `ServiceWOtoIssue`.`WOnumber`) and (`ServicePriority`.`Store` = `ServiceWOtoIssue`.`WOstore`)))) join `ServiceIssue` on((`ServiceWOtoIssue`.`Issue` = `ServiceIssue`.`Issue`)))"
+        Dim selecttext As String = "select `ServiceIssue`.`Type` AS `Description of Work`,`ServicePriority`.`Store` AS `Store`,`ServicePriority`.`WO` AS `WO` from ((`ServicePriority` join `ServiceWOtoIssue` on(((`ServicePriority`.`WO` = `ServiceWOtoIssue`.`WOnumber`) and (`ServicePriority`.`Store` = `ServiceWOtoIssue`.`WOstore`)))) join `ServiceIssue` on((`ServiceWOtoIssue`.`Issue` = `ServiceIssue`.`Issue`)))"
         buildsql2 = selecttext + " WHERE `ServicePriority`.`Store` IN (" + store + ") AND `ServicePriority`.`Tech` = '" + tech + "'"
     End Function
 

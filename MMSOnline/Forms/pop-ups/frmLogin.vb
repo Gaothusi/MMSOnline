@@ -236,7 +236,7 @@ Public Class frmLogin
         'persistant.paymentmath.Newb()
         'Me.Text = "MMS Online - Version " + PreFetch.version.ToString
         Dim ver As String = Mid(My.Application.Info.Version.ToString.Replace(".", ""), 1, 3)
-        Me.Text = "MMS Online - Version 4.04.43" '& ver.Substring(0, 1) & "." & ver.Substring(1) '3.26"
+        Me.Text = "MMS Online - Version 4.04.44" '& ver.Substring(0, 1) & "." & ver.Substring(1) '3.26"
 
         Me.AcceptButton = cmdLogin
         Me.CancelButton = cmdCancel
