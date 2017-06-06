@@ -42,7 +42,10 @@ Public Class FrmPriority
         For x As Integer = 0 To IssuesforthoseWOs.Rows.Count - 1
             For xx As Integer = 0 To mydata.Rows.Count - 1
                 If IssuesforthoseWOs.Rows(x).Item("Store") = mydata.Rows(xx).Item("Store") And IssuesforthoseWOs.Rows(x).Item("WO") = mydata.Rows(xx).Item("WO") Then
-                    mydata.Rows(xx).Item("Description of Work") = mydata.Rows(xx).Item("Description of Work") + " " + IssuesforthoseWOs.Rows(x).Item("Description of Work")
+                    If IssuesforthoseWOs.Rows(x).Item("Description of Work") IsNot "" Then 'avoid putting delimeter /*/ at the beginning of description or when its empty
+                        mydata.Rows(xx).Item("Description of Work") = mydata.Rows(xx).Item("Description of Work") + IssuesforthoseWOs.Rows(x).Item("Description of Work") + " /*/ "
+                    End If
+
                 End If
             Next
         Next
@@ -61,13 +64,12 @@ Public Class FrmPriority
 
 
     Private Function buildsql() As String
-        Dim selecttext As String = "select `ServicePriority`.`number` AS `number`,`ServicePriority`.`priority` AS `prioritynumber`,`ServicePriority`.`WO` AS `WO`,`ServicePriority`.`Store` AS `Store`,`ServicePriority`.`Tech` AS `Tech`,`ServiceCustomers`.`Name` AS `Name`, `ServiceWO`.`DateReqComp` AS `Date Requested`,`ServiceWO`.`Status` AS `Status`, `ServiceCustomers`.`Bmake` AS `Make`,`ServiceCustomers`.`Bmodel` AS `Model`,`ServiceCustomers`.`Mmodel` AS `Engine`,`ServiceCustomers`.`Color` AS `Color`, `ServiceWO`.`Priority` AS `Priority`,'' as 'Description of Work',`ServiceWO`.`DateActDropOff` AS `Dropped Off` from ((`ServiceWO` join `ServicePriority` on(((`ServiceWO`.`Number` = `ServicePriority`.`WO`) and (`ServiceWO`.`Store` = `ServicePriority`.`Store`)))) join `ServiceCustomers` on((`ServiceCustomers`.`Number` = `ServiceWO`.`CustomerProfile`)))"
-        buildsql = selecttext + " WHERE `ServicePriority`.`Store` IN (" + store + ") AND `ServicePriority`.`Tech` = '" + tech + "' and ServiceWO.Status = 'Active'   order by `ServiceWO`.`Priority`"
-        ' 
+        Dim selecttext As String = "select `ServicePriority`.`number` AS `number`,`ServicePriority`.`priority` AS `prioritynumber`,`ServicePriority`.`WO` AS `WO`,`ServicePriority`.`Store` AS `Store`,`ServicePriority`.`Tech` AS `Tech`,`ServiceCustomers`.`Name` AS `Name`, `ServiceWO`.`DateReqComp` AS `Date Requested`,`ServiceWO`.`Status` AS `Work Order Status`, `ServiceCustomers`.`Bmake` AS `Make`,`ServiceCustomers`.`Bmodel` AS `Model`,`ServiceCustomers`.`Mmodel` AS `Engine`,`ServiceCustomers`.`Color` AS `Color`, `ServiceWO`.`Priority` AS `Priority`,'' as 'Description of Work',`ServiceWO`.`DateActDropOff` AS `Dropped Off` from ((`ServiceWO` join `ServicePriority` on(((`ServiceWO`.`Number` = `ServicePriority`.`WO`) and (`ServiceWO`.`Store` = `ServicePriority`.`Store`)))) join `ServiceCustomers` on((`ServiceCustomers`.`Number` = `ServiceWO`.`CustomerProfile`)))"
+        buildsql = selecttext + " WHERE `ServicePriority`.`Store` IN (" + store + ") AND `ServicePriority`.`Tech` = '" + tech + "' and ServiceWO.Status IN('Active','Approved Rig') order by `ServiceWO`.`Priority`"
     End Function
 
     Private Function buildsql2() As String
-        Dim selecttext As String = "select `ServiceIssue`.`Type` AS `Description of Work`,`ServicePriority`.`Store` AS `Store`,`ServicePriority`.`WO` AS `WO` from ((`ServicePriority` join `ServiceWOtoIssue` on(((`ServicePriority`.`WO` = `ServiceWOtoIssue`.`WOnumber`) and (`ServicePriority`.`Store` = `ServiceWOtoIssue`.`WOstore`)))) join `ServiceIssue` on((`ServiceWOtoIssue`.`Issue` = `ServiceIssue`.`Issue`)))"
+        Dim selecttext As String = "select `ServiceIssue`.`Description` AS `Description of Work`,`ServicePriority`.`Store` AS `Store`,`ServicePriority`.`WO` AS `WO`,`ServiceWO`.`Status` AS `Work Order Status` from ((`ServicePriority` join `ServiceWOtoIssue` on (((`ServicePriority`.`WO` = `ServiceWOtoIssue`.`WOnumber`) and (`ServicePriority`.`Store` = `ServiceWOtoIssue`.`WOstore`) ))) join `ServiceIssue` on((`ServiceWOtoIssue`.`Issue` = `ServiceIssue`.`Issue`)) join ServiceWO on ((`ServiceWOtoIssue`.`WOnumber` = `ServiceWO`.`Number`)))"
         buildsql2 = selecttext + " WHERE `ServicePriority`.`Store` IN (" + store + ") AND `ServicePriority`.`Tech` = '" + tech + "'"
     End Function
 

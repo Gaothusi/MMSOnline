@@ -234,9 +234,9 @@ Public Class frmLogin
     Private Sub frmLogin_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.txtpassword.Select()
         'persistant.paymentmath.Newb()
-        'Me.Text = "MMS Online - Version " + PreFetch.version.ToString
+
         Dim ver As String = Mid(My.Application.Info.Version.ToString.Replace(".", ""), 1, 3)
-        Me.Text = "MMS Online - Version 4.04.44" '& ver.Substring(0, 1) & "." & ver.Substring(1) '3.26"
+        Me.Text = "MMS Online - Version 4.04.45"
 
         Me.AcceptButton = cmdLogin
         Me.CancelButton = cmdCancel
