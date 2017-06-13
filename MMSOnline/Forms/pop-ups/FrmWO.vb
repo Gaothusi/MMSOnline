@@ -433,7 +433,9 @@ Public Class FrmWO
         If mydata(29).value <> "" Then mydata(29).txtbox.text = mydata(29).value
 
         'Sync The Calender Up
-        CalDateReqComp.SetDate(CDate(mydata(22).value))
+        If mydata(22).value <> "" Then
+            CalDateReqComp.SetDate(CDate(mydata(22).value))
+        End If
         'Show/hide Items taht depend on a customer number
         If CustomerNumber > 0 Then
             btnLogCall.Visible = True
