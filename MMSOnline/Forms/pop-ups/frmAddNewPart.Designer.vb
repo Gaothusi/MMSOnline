@@ -202,7 +202,7 @@ Partial Class frmAddNewPart
         'cboSupplier
         '
         Me.cboSupplier.FormattingEnabled = True
-        Me.cboSupplier.Items.AddRange(New Object() {"", "Bayliner", "BRP Rotax", "Centurion", "EZ Loader", "Fishn Hole", "Four Winns", "Glastron", "Hewescraft", "Indmar", "Karavan", "Land n Sea", "Mercury", "Monster", "PCM", "Riverhawk", "Roswell", "Rotax", "Sanger", "Scarab", "Sea Ray", "Shorelander", "Smoker / Sylvan", "Volvo", "Western", "Other"})
+        Me.cboSupplier.Items.AddRange(New Object() {"", "BRP Rotax", "Bayliner", "Centurion", "EZ Loader", "Fishn Hole", "Four Winns", "Glastron", "Hewescraft", "Indmar", "Karavan", "Land n Sea", "Mercury", "Monster", "Other", "PCM", "Riverhawk", "Roswell", "Rotax", "Sanger", "Scarab", "Sea Ray", "Sea-Legs", "Shorelander", "Smoker / Sylvan", "Volvo", "Western"})
         Me.cboSupplier.Location = New System.Drawing.Point(223, 47)
         Me.cboSupplier.Margin = New System.Windows.Forms.Padding(4)
         Me.cboSupplier.Name = "cboSupplier"
