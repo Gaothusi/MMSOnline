@@ -1061,7 +1061,7 @@ Partial Class FrmIssue
         '
         Me.cboWarrantyType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboWarrantyType.FormattingEnabled = True
-        Me.cboWarrantyType.Items.AddRange(New Object() {"Atlantis", "Bayliner", "Boathouse", "Centurion", "Ez Loader", "Faria", "Four Winns", "Glastron", "Hewescraft", "Jensen Electronics", "Karavan", "Lighthouse", "Mercury", "Monterey", "Mid West", "PCM", "Pro Tech/Diamond Coat", "Prospec Electronics", "Renfrew", "River Hawk", "Rotax", "Sanger", "Scarab", "Sea Ray", "Shipwreck", "Sylvan/Smoker", "Volvo", "Yamaha", "Other"})
+        Me.cboWarrantyType.Items.AddRange(New Object() {"Atlantis", "Bayliner", "Boathouse", "Centurion", "Ez Loader", "Faria", "Four Winns", "Glastron", "Hewescraft", "Jensen Electronics", "Karavan", "Lighthouse", "Mercury", "Monterey", "Mid West", "PCM", "Pro Tech/Diamond Coat", "Prospec Electronics", "Renfrew", "River Hawk", "Rotax", "Sanger", "Scarab", "Sea Ray", "Shipwreck", "Sylvan/Smoker", "Trailmaster", "Veethree", "Volvo", "Yamaha", "Other"})
         Me.cboWarrantyType.Location = New System.Drawing.Point(205, 26)
         Me.cboWarrantyType.Margin = New System.Windows.Forms.Padding(4)
         Me.cboWarrantyType.Name = "cboWarrantyType"

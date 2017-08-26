@@ -188,7 +188,7 @@ Partial Class frmWarrantyClaimsMain
         '
         Me.cboWarrantyType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboWarrantyType.FormattingEnabled = True
-        Me.cboWarrantyType.Items.AddRange(New Object() {"All", "Atlantis", "Bayliner", "Boathouse", "Centurion", "Ez Loader", "Faria", "Four Winns", "Glastron", "Hewescraft", "Indmar", "Jensen Electronics", "Karavan", "Lighthouse", "Mercury", "Mid West", "Monster", "Monterey", "PCM", "Pro Tech/Diamond Coat", "Prospec Electronics", "Renfrew", "Riverhawk", "Rotax", "Sanger", "Scarab", "Sea Ray", "Shipwreck", "Sylvan/Smoker", "Volvo", "Yamaha", "Other"})
+        Me.cboWarrantyType.Items.AddRange(New Object() {"All", "Atlantis", "Bayliner", "Boathouse", "Centurion", "Ez Loader", "Faria", "Four Winns", "Glastron", "Hewescraft", "Indmar", "Jensen Electronics", "Karavan", "Lighthouse", "Mercury", "Mid West", "Monster", "Monterey", "PCM", "Pro Tech/Diamond Coat", "Prospec Electronics", "Renfrew", "Riverhawk", "Rotax", "Sanger", "Scarab", "Sea Ray", "Shipwreck", "Sylvan/Smoker", "Trailmaster", "Veethree", "Volvo", "Yamaha", "Other"})
         Me.cboWarrantyType.Location = New System.Drawing.Point(157, 244)
         Me.cboWarrantyType.Margin = New System.Windows.Forms.Padding(4)
         Me.cboWarrantyType.Name = "cboWarrantyType"
