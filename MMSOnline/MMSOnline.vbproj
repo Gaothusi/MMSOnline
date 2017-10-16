@@ -35,10 +35,10 @@
     <TargetCulture>en-CA</TargetCulture>
     <ProductName>MMSOnline</ProductName>
     <PublisherName>Marine Management Services</PublisherName>
-    <MinimumRequiredVersion>4.0.4.50</MinimumRequiredVersion>
+    <MinimumRequiredVersion>4.0.4.51</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>50</ApplicationRevision>
+    <ApplicationRevision>52</ApplicationRevision>
     <ApplicationVersion>4.0.4.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -70,10 +70,10 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>CF79D2340BF14F0CFD5A527C4786595C552C3F86</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>6FB2441A2ACBA596663BE61DDBE971C02A3F3910</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>MMSOnline_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>MMSOnline_2_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -795,6 +795,7 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="MMSOnline_1_TemporaryKey.pfx" />
+    <None Include="MMSOnline_2_TemporaryKey.pfx" />
     <None Include="MMSOnline_TemporaryKey.pfx" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
@@ -1041,12 +1042,12 @@
   <ItemGroup>
     <PublishFile Include="MSDATASRC">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>

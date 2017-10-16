@@ -8919,9 +8919,9 @@ Public Class frmBOS
         If txtbatteries.Text <> "" Then
             Select Case persistant.getvalue(persistant.tbl_location, "Prov", "Code = '" + mybosstorecode + "'", 0)
                 Case "AB"
-                    temptirefee = temptirefee + (CInt(txtbatteries.Text) * 0)
+                    temptirefee = temptirefee + (CInt(txtbatteries.Text) * 15)
                 Case "BC"
-                    temptirefee = temptirefee + (CInt(txtbatteries.Text) * 0)
+                    temptirefee = temptirefee + (CInt(txtbatteries.Text) * 15)
             End Select
         End If
         If txttires.Text <> "" Then
