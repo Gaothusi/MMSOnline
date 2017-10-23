@@ -35,10 +35,10 @@
     <TargetCulture>en-CA</TargetCulture>
     <ProductName>MMSOnline</ProductName>
     <PublisherName>Marine Management Services</PublisherName>
-    <MinimumRequiredVersion>4.0.4.51</MinimumRequiredVersion>
+    <MinimumRequiredVersion>4.0.4.52</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>52</ApplicationRevision>
+    <ApplicationRevision>53</ApplicationRevision>
     <ApplicationVersion>4.0.4.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -1042,12 +1042,12 @@
   <ItemGroup>
     <PublishFile Include="MSDATASRC">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>

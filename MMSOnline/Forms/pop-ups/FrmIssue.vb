@@ -109,7 +109,7 @@ Public Class FrmIssue
                 cmbchanged(Cmbpaymenttype)
                 cmbchanged(cmbStatus)
                 cmbchanged(CmbTypeOfWork)
-                txtQuoteRate.Text = "$128"
+                txtQuoteRate.Text = "$134"
                 moneychanged(txtQuoteRate)
                 If Cmbpaymenttype.SelectedItem = "WARRANTY" Then
                     CmbBillCustomer.SelectedItem = "NO"
@@ -1411,23 +1411,25 @@ Public Class FrmIssue
     End Sub
 
     Private Sub cboWarrantyType_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboWarrantyType.SelectedIndexChanged
-        If Store = "EDM" Then
-            Select Case cboWarrantyType.SelectedItem
-                'Case "Mercury", "Sea Ray"
-                '    txtQuoteRate.Text = "$120"
-                Case "Midwest"
-                    txtQuoteRate.Text = "$70"
-                Case "Karavan"
-                    txtQuoteRate.Text = "$90"
-                Case "Bayliner"
-                    txtQuoteRate.Text = "$102"
-                Case Else
-                    txtQuoteRate.Text = "$128"
-            End Select
-            moneychanged(txtQuoteRate)
+        'If Store = "EDM" Then
+        '    Select Case cboWarrantyType.SelectedItem
+        '        'Case "Mercury", "Sea Ray"
+        '        '    txtQuoteRate.Text = "$120"
+        '        Case "Midwest"
+        '            txtQuoteRate.Text = "$70"
+        '        Case "Karavan"
+        '            txtQuoteRate.Text = "$90"
+        '        Case "Bayliner"
+        '            txtQuoteRate.Text = "$102"
+        '        Case Else
+        '            txtQuoteRate.Text = "$128"
+        '    End Select
+        '    moneychanged(txtQuoteRate)
 
-        End If
-
+        'End If
+        'October 20th - Dan Koziak wants the labour rate for all stores to be set to $134
+        txtQuoteRate.Text = "$134"
+        moneychanged(txtQuoteRate)
     End Sub
 
     Private Sub btncompleted_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btncompleted.Click

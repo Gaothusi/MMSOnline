@@ -419,7 +419,7 @@ Partial Class FrmIssue
         Me.Panel1.Location = New System.Drawing.Point(928, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(356, 520)
+        Me.Panel1.Size = New System.Drawing.Size(356, 519)
         Me.Panel1.TabIndex = 1
         '
         'btnClose
@@ -694,7 +694,7 @@ Partial Class FrmIssue
         Me.txtQuoteRate.Name = "txtQuoteRate"
         Me.txtQuoteRate.Size = New System.Drawing.Size(81, 22)
         Me.txtQuoteRate.TabIndex = 68
-        Me.txtQuoteRate.Text = "128"
+        Me.txtQuoteRate.Text = "134"
         '
         'btnLogCall
         '
